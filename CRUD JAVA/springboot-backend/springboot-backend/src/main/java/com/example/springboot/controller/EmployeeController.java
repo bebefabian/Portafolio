@@ -3,6 +3,7 @@ package com.example.springboot.controller;
 import com.example.springboot.exception.ResourceNotFoundException;
 import com.example.springboot.model.Employee;
 import com.example.springboot.repository.EmployeeRepository;
+import com.example.springboot.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +18,9 @@ public class EmployeeController {
     @Autowired
     private EmployeeRepository employeeRepository;
 
+    @Autowired
+    private EmployeeService employeeService;
+
     @GetMapping
     public List<Employee> getAllEmployees(){
         return employeeRepository.findAll();
@@ -25,7 +29,8 @@ public class EmployeeController {
     //build create employee REST API
     @PostMapping
     public Employee createEmployee(@RequestBody Employee employee){
-        return employeeRepository.save(employee);
+        Employee employeeCreated = employeeService.createEmployee(employee);
+        return employeeCreated;
     }
 
     //build find employee by id REST API
