@@ -23,7 +23,7 @@ public class EmployeeController {
 
     @GetMapping
     public List<Employee> getAllEmployees(){
-        return employeeRepository.findAll();
+        return employeeService.findAll();
     }
 
     //build create employee REST API
@@ -35,10 +35,9 @@ public class EmployeeController {
 
     //build find employee by id REST API
     @GetMapping("{id}")
-    public ResponseEntity<Employee> getEmployeeById(@PathVariable Long id){
-        Employee employee = employeeRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Employee not Exist with id:" + id));
-        return ResponseEntity.ok(employee);
+    public ResponseEntity<Employee> getEmployeeById(@PathVariable("id") Long id){
+        Employee employeeById = employeeService.findEmployeeById(id);
+        return ResponseEntity.ok(employeeById);
     }
 
     // build update employee REST API
