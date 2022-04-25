@@ -34,10 +34,10 @@ public class EmployeeServiceImpl implements EmployeeService{
 
         UpdateEmployee.setFirstName(employee.getFirstName());
         UpdateEmployee.setLastName(employee.getLastName());
-        UpdateEmployee.setFullName(employee.getFullName());
+        UpdateEmployee.setFullName(getFullName(employee));
         UpdateEmployee.setEmailId(employee.getEmailId());
 
-        return employeeRepository.save(employee);
+        return employeeRepository.save(UpdateEmployee);
 
     }
 
