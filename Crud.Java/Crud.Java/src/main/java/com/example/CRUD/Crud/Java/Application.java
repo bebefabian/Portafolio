@@ -1,5 +1,6 @@
 package com.example.CRUD.Crud.Java;
 
+import com.example.CRUD.Crud.Java.repository.DepartmentRepository;
 import com.example.CRUD.Crud.Java.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -15,6 +16,9 @@ public class Application implements CommandLineRunner {
 
 	@Autowired
 	private EmployeeRepository employeeRepository;
+
+	@Autowired
+	private DepartmentRepository departmentRepository;
 
 	@Override
 	public void run(String... args) throws Exception {
