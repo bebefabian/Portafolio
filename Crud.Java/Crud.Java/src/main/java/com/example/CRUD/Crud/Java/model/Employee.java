@@ -30,4 +30,10 @@ public class Employee {
 
     @Column(name = "email_id")
     public String emailId;
+
+    @Column(name = "age")
+    public Integer age;
+
+    @Column(name = "address")
+    public String address;
 }

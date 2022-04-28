@@ -1,5 +1,6 @@
 package com.example.CRUD.Crud.Java;
 
+import com.example.CRUD.Crud.Java.repository.CategoryRepository;
 import com.example.CRUD.Crud.Java.repository.DepartmentRepository;
 import com.example.CRUD.Crud.Java.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,9 @@ public class Application implements CommandLineRunner {
 
 	@Autowired
 	private DepartmentRepository departmentRepository;
+
+	@Autowired
+	private CategoryRepository categoryRepository;
 
 	@Override
 	public void run(String... args) throws Exception {

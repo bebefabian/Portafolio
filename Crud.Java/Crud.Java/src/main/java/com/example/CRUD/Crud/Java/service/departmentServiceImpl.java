@@ -1,7 +1,6 @@
 package com.example.CRUD.Crud.Java.service;
 
 import com.example.CRUD.Crud.Java.model.Department;
-import com.example.CRUD.Crud.Java.model.Employee;
 import com.example.CRUD.Crud.Java.repository.DepartmentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
