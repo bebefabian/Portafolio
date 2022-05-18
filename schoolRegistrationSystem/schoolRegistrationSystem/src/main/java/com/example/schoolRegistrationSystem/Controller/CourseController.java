@@ -26,9 +26,7 @@ public class CourseController {
     }
 
     @PostMapping
-    public Course createCourse(@RequestBody Course course){
-        return courseService.createCourse(course);
-    }
+    public Course createCourse(@RequestBody Course course){ return courseService.createCourse(course); }
 
     @GetMapping("{id}")
     public ResponseEntity<Course> findCourseById(@PathVariable("id") long id){

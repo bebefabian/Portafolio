@@ -1,7 +1,9 @@
 package com.example.schoolRegistrationSystem.Controller;
 
 import com.example.schoolRegistrationSystem.Model.Student;
+import com.example.schoolRegistrationSystem.Repository.CourseRepository;
 import com.example.schoolRegistrationSystem.Repository.StudentRepository;
+import com.example.schoolRegistrationSystem.Service.CourseService;
 import com.example.schoolRegistrationSystem.Service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -11,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/v1/student")
+@RequestMapping("/api")
 public class StudentController {
 
     @Autowired
@@ -19,6 +21,12 @@ public class StudentController {
 
     @Autowired
     private StudentRepository studentRepository;
+
+    @Autowired
+    private CourseRepository courseRepository;
+
+    @Autowired
+    private CourseService courseService;
 
     @GetMapping
     public List<Student> findAllStudent() { return studentService.findAllStudent(); }
