@@ -23,10 +23,10 @@ public class Course {
 
     @Column(name = "course_name")
     public String courseName;
-
-    @ManyToMany(mappedBy = "course", fetch = FetchType.EAGER)
-    @JsonIgnore
-    private Set<Student> student = new HashSet<>();
+//
+//    @ManyToMany(mappedBy = "course", fetch = FetchType.EAGER)
+//    @JsonIgnore
+//    private Set<Student> student = new HashSet<>();
 
     public Course() {
 
@@ -52,12 +52,12 @@ public class Course {
         this.courseName = courseName;
     }
 
-    public Set<Student> getStudent() {
-        return student;
-    }
-
-    public void setStudent(Set<Student> student) {
-        this.student = student;
-    }
+//    public Set<Student> getStudent() {
+//        return student;
+//    }
+//
+//    public void setStudent(Set<Student> student) {
+//        this.student = student;
+//    }
 }
 

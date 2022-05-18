@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+//JPA = Java persistence API
 
 @Getter
 @Setter
